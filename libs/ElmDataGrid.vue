@@ -140,6 +140,9 @@ export default {
       this.params.page = page;
       this.getData(this.params);
     },
+    reload() {
+      this.goPage(1);
+    },
     getData(data) {
       let params = JSON.parse(JSON.stringify(data));
       let api = this.options.dataApi;
