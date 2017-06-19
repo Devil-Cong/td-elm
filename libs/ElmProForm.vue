@@ -18,14 +18,17 @@
         :autosize="{minRows: 2, maxRows: 2}"
         :disabled="item.disabled"
         v-model="formData[item.field]"
-        @change="item.change">
+        @change="item.change"
+        :placeholder="'请输入' + item.text">
       </el-input>
       <el-select
         v-if="item.type === 'select'"
         v-model="formData[item.field]"
+        clearable
+        filterable
         :disabled="item.disabled"
         @change="item.change"
-        placeholder="请选择">
+        :placeholder="'请选择' + item.text">
         <el-option
           v-for="(it, k) in item.options"
           :key="k"
