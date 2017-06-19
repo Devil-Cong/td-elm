@@ -76,6 +76,12 @@
         :data="item.options"
         filterable>
       </el-transfer>
+      <el-switch
+        v-if="item.type === 'switch'"
+        v-model="formData[item.field]"
+        :on-value="true"
+        :off-value="false">
+      </el-switch>
     </el-form-item>
     <el-row :gutter="20">
       <el-col :span="6" :offset="6">
@@ -90,7 +96,7 @@
 </template>
 
 <script>
-import { Form, FormItem, Input, Select, Option, RadioGroup, Radio, CheckboxGroup, Checkbox, Tree, Transfer, Row, Col, Button, Message } from 'element-ui';
+import { Form, FormItem, Input, Select, Option, RadioGroup, Radio, CheckboxGroup, Checkbox, Tree, Transfer, Row, Col, Button, Message, Switch } from 'element-ui';
 import rules from '../utils/rules';
 
 let patterns = {
@@ -138,7 +144,8 @@ export default {
     elTransfer: Transfer,
     elRow: Row,
     elCol: Col,
-    elButton: Button
+    elButton: Button,
+    elSwitch: Switch
   },
   props: {
     options: {
@@ -154,6 +161,11 @@ export default {
         if (!options.fields || !rules.isArray(options.fields)) {
           throw new Error('ProForm\'s fields must be an Array');
         }
+        options.fields.forEach((val, key) => {
+          if (val.type === 'switch' && val.options && !val.options.length === 2) {
+            throw new Error('switch type\'s options length must be 2')
+          }
+        });
         return true;
       }
     }
