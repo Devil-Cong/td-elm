@@ -10,6 +10,23 @@
         :style="'width: ' + options.search.width || '160px'"
         :placeholder="options.search.placeholder || '请输入搜索内容'">
       </el-input>
+      <el-select
+        v-for="(item, key) in options.filters"
+        :key="key"
+        v-model="params[item.field]"
+        @change="searchChange"
+        size="small"
+        filterable
+        clearable
+        :style="'width: ' + item.width || '160px'"
+        :placeholder="item.placeholder || '请输入搜索内容'">
+        <el-option
+          v-for="(it, k) in item.options"
+          :key="k"
+          :label="it.label"
+          :value="it.value">
+        </el-option>
+      </el-select>
       <el-button
         v-if="options.headBtns"
         v-for="(item, key) in options.headBtns"
@@ -59,7 +76,7 @@
 </template>
 
 <script>
-import { Table, TableColumn, Button, Pagination, Input } from 'element-ui';
+import { Table, TableColumn, Button, Pagination, Input, Select, Option } from 'element-ui';
 export default {
   name: 'elm-data-grid',
   components: {
@@ -67,7 +84,9 @@ export default {
     elTableColumn: TableColumn,
     elButton: Button,
     elPagination: Pagination,
-    elInput: Input
+    elInput: Input,
+    elSelect: Select,
+    elOption: Option
   },
   props: {
     options: {
@@ -109,7 +128,13 @@ export default {
   },
   methods: {
     initParams() {
-      this.params = Object.assign({}, this.defParams, this.options.params);
+      let filters = {};
+      if (this.options.filters) {
+        this.options.filters.forEach((val, key) => {
+          filters[val.field] = '';
+        });
+      }
+      this.params = Object.assign({}, this.defParams, filters, this.options.params);
     },
     goPage(page) {
       this.params.page = page;
@@ -152,7 +177,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .elm-pagn {
   margin-top: 10px;
   float: right;
@@ -163,5 +188,8 @@ export default {
 .el-input {
     width: 160px;
     margin-right: 10px;
+}
+.el-select {
+  margin-right: 10px;
 }
 </style>
