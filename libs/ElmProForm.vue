@@ -1,5 +1,6 @@
 <template>
   <el-form
+    class="elm-pro-form"
     ref="el-form"
     :model="formData"
     :rules="valids"
@@ -64,6 +65,17 @@
         :default-checked-keys="formData[item.field]"
         highlight-current>
       </el-tree>
+      <el-transfer
+        v-if="item.type === 'transfer'"
+        v-model="formData[item.field]"
+        :props="{
+          key: 'value',
+          label: 'label'
+        }"
+        :titles="['可选列表', '已选列表']"
+        :data="item.options"
+        filterable>
+      </el-transfer>
     </el-form-item>
     <el-row :gutter="20">
       <el-col :span="6" :offset="6">
@@ -78,8 +90,8 @@
 </template>
 
 <script>
-import { Form, FormItem, Input, Select, Option, RadioGroup, Radio, CheckboxGroup, Checkbox, Tree, Row, Col, Button, Message } from 'element-ui';
-import rules from '../utils/rules';
+import { Form, FormItem, Input, Select, Option, RadioGroup, Radio, CheckboxGroup, Checkbox, Tree, Transfer, Row, Col, Button, Message } from 'element-ui';
+import rules from '@/utils/rules';
 
 let patterns = {
     email: {
@@ -123,6 +135,7 @@ export default {
     elCheckboxGroup: CheckboxGroup,
     elCheckbox: Checkbox,
     elTree: Tree,
+    elTransfer: Transfer,
     elRow: Row,
     elCol: Col,
     elButton: Button
@@ -287,6 +300,17 @@ export default {
               Message.error('请选择' + val.text);
             }
           });
+          // 对 transfer 类型特殊处理
+          let transfers = this.fields.filter((val, key) => {
+            return val.type === 'transfer';
+          });
+          transfers.forEach((val, key) => {
+            let value = this.formData[val.field];
+            if(val.required && value.length === 0 && flag === false) {
+              flag = true;
+              Message.error('请选择' + val.text);
+            }
+          });
           if (flag) {
             return false;
           }
@@ -309,3 +333,12 @@ export default {
   }
 };
 </script>
+
+<style>
+.elm-pro-form .el-transfer-panel__list .el-transfer-panel__item{
+  display: block;
+}
+.elm-pro-form .el-transfer-panel__list .el-checkbox{
+  margin-left: 0;
+}
+</style>
