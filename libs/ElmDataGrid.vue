@@ -44,7 +44,8 @@
         v-for="(item, key) in options.contents"
         v-if="item.button === true"
         :key="key"
-        :label="item.text">
+        :label="item.text"
+        :width="item.width">
         <template scope="scope">
           <el-button
             v-for="(it, k) in item.content"
@@ -60,7 +61,8 @@
         v-else
         :key="key"
         :label="item.text"
-        :formatter="format(item)">
+        :formatter="format(item)"
+        :width="item.width">
       </el-table-column>
     </el-table>
     <div class="elm-pagn">
