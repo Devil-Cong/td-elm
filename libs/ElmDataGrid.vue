@@ -49,6 +49,7 @@
         <template scope="scope">
           <el-button
             v-for="(it, k) in item.content"
+            v-if="condition(scope.row, it)"
             :key="k"
             size="mini"
             :type="it.type"
@@ -177,6 +178,12 @@ export default {
       this.timer = setTimeout(() => {
         this.getData(this.params);
       }, 500);
+    },
+    condition(item, btn) {
+      if (!btn.condition) {
+        return true;
+      }
+      return btn.condition(item);
     }
   }
 }
