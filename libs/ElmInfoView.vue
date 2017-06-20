@@ -62,6 +62,8 @@ export default {
 <style>
 .elm-info-view {
   margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
 }
 .elm-info-view .block{
   margin-top: 5px;
