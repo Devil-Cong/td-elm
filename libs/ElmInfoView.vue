@@ -37,9 +37,13 @@ export default {
   },
   data() {
     return {
-      data: this.options.data || {},
       colspan: this.options.colspan || 8,
       labelWidth: this.options.labelWidth || '120px'
+    }
+  },
+  computed: {
+    data: function() {
+      return this.options.data || {}
     }
   },
   methods: {
