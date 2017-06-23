@@ -100,7 +100,7 @@
 
 <script>
 import { Form, FormItem, Input, Select, Option, RadioGroup, Radio, CheckboxGroup, Checkbox, Tree, Transfer, Row, Col, Button, Message, Switch } from 'element-ui';
-import rules from '../utils/rules';
+import rules from '../../utils/rules';
 
 let patterns = {
     email: {

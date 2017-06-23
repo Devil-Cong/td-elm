@@ -17,7 +17,7 @@
 
 <script>
 import { Col } from 'element-ui';
-import rules from '../utils/rules';
+import rules from '../../utils/rules';
 export default {
   name: 'elm-info-view',
   components: {
