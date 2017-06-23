@@ -1,12 +1,11 @@
 ## td-elm
 基于element-ui组件的简单二次封装，目前只支持更webpack搭配使用，不支持浏览器script引入。
 
-### 已有的组件
-- [ElmDataGrid](#表格展示组件 ElmDataGrid)
+- [ElmDataGrid](#elmdatagrid)
 - [ElmProForm]()
 - ElmInfoView
 
-### 表格展示组件 ElmDataGrid
+## ElmDataGrid
 
 #### `*`options.dataApi
 `ElmDataGrid`获取数据的方法，接受的参数是`ElmDataGrid`组装后的`params`，要求返回值是`Promise`。

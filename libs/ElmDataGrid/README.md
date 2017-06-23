@@ -1,4 +1,4 @@
-### 表格展示组件 ElmDataGrid
+## ElmDataGrid
 
 #### `*`options.dataApi
 `ElmDataGrid`获取数据的方法，接受的参数是`ElmDataGrid`组装后的`params`，要求返回值是`Promise`。
