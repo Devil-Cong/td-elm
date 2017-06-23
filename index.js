@@ -1,3 +1,3 @@
-export const ElmDataGrid = require('./libs/ElmDataGrid.vue');
-export const ElmProForm = require('./libs/ElmProForm.vue');
-export const ElmInfoView = require('./libs/ElmInfoView.vue');
+export const ElmDataGrid = require('./libs/ElmDataGrid/ElmDataGrid.vue');
+export const ElmProForm = require('./libs/ElmProForm/ElmProForm.vue');
+export const ElmInfoView = require('./libs/ElmInfoView/ElmInfoView.vue');
