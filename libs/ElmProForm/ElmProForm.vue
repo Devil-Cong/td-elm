@@ -174,6 +174,9 @@ export default {
     }
   },
   computed: {
+    formData() {
+      return this.options.initValues || {};
+    },
     fields() {
       let fields = this.options.fields || [];
       fields.forEach((val, key) => {
@@ -292,11 +295,6 @@ export default {
           this.$refs[val.field][0].setCheckedKeys(value);
         });
       }, 1000);
-  },
-  data() {
-    return {
-      formData: this.options.initValues || {}
-    };
   },
   methods: {
     onSubmit() {

@@ -4,7 +4,7 @@
 `ElmDataGrid`获取数据的方法，接受的参数是`ElmDataGrid`组装后的`params`，要求返回值是`Promise`。
 
 ```javascript
-dataApi: function(params) {
+dataApi: (params) => {
 	// ... 可在这里对 params 参数再次处理
 	return new Promise(function(resolve, reject) {
 		// ... 
@@ -17,7 +17,7 @@ dataApi: function(params) {
 `ElmDataGrid`调用`dataApi`后处理数据的函数，接受的参数是服务端接口返回的结果，要求返回一个带有`rows`和`total`属性的对象。
 
 ```javascript
-apiCallback: function(res) {
+apiCallback: (res) => {
 	// ... 处理接口返回的结果
 	return {
 		rows: [], // ElmDataGrid 展示的数据
