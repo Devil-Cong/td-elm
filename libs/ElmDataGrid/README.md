@@ -5,24 +5,24 @@
 
 ```javascript
 dataApi: (params) => {
-	// ... 可在这里对 params 参数再次处理
-	return new Promise(function(resolve, reject) {
-		// ... 
-		resolve(result);
-	});
+  // ... 可在这里对 params 参数再次处理
+  return new Promise(function(resolve, reject) {
+    // ...
+    resolve(result);
+  });
 }
 ```
 
-#### `*`options.apiCallback 
+#### `*`options.apiCallback
 `ElmDataGrid`调用`dataApi`后处理数据的函数，接受的参数是服务端接口返回的结果，要求返回一个带有`rows`和`total`属性的对象。
 
 ```javascript
 apiCallback: (res) => {
-	// ... 处理接口返回的结果
-	return {
-		rows: [], // ElmDataGrid 展示的数据
-		total: 0
-	}
+  // ... 处理接口返回的结果
+  return {
+    rows: [], // ElmDataGrid 展示的数据
+    total: 0
+  }
 }
 ```
 
@@ -31,23 +31,23 @@ apiCallback: (res) => {
 
 ```javascript
 contents: [
-	{
-		text: '姓名', // 表头显示的文字
-		width: '120px', // 该列的宽度，可不传
-		content: 'userInfo.name' // 对应的字段
-	},
-	{
-		text: '操作',
-		button: true, // 设置该列为按钮
-		content: [ // 当为按钮时，content 为数组
-			{
-				label: '删除', // 按钮显示的文字
-				type: 'danger', // 按钮类型，非必传
-				fn: this.delete.bind(this), // 点击该按钮触发的函数，函数参数为(index, row)
-				condition: this.deleteCondition.bind(this) // 控制该按钮是否显示，不传为一直显示，函数参数为(item)，要求返回 Boolean 值
-			}
-		]	
-	}
+  {
+    text: '姓名', // 表头显示的文字
+    width: '120px', // 该列的宽度，可不传
+    content: 'userInfo.name' // 对应的字段
+  },
+  {
+    text: '操作',
+    button: true, // 设置该列为按钮
+    content: [ // 当为按钮时，content 为数组
+      {
+        label: '删除', // 按钮显示的文字
+        type: 'danger', // 按钮类型，非必传
+        fn: this.delete.bind(this), // 点击该按钮触发的函数，函数参数为(index, row)
+        condition: this.deleteCondition.bind(this) // 控制该按钮是否显示，不传为一直显示，函数参数为(item)，要求返回 Boolean 值
+      }
+    ]
+  }
 ]
 ```
 
@@ -57,7 +57,7 @@ contents: [
 
 ```javascript
 params: {
-	size: 15 // 默认每页显示 20 条数据
+  size: 15 // 默认每页显示 20 条数据
 }
 ```
 
@@ -66,8 +66,8 @@ params: {
 
 ```javascript
 search: {
-	placeholder: '请输入搜索内容',
-	width: '120px'
+  placeholder: '请输入搜索内容',
+  width: '120px'
 }
 ```
 
@@ -76,26 +76,26 @@ search: {
 
 ```javascript
 filters: [{
-	field: 'status', // 搜索的数据的字段，可在 params 初始化
-	placeholder: '请选择培训状态',
-	width: '160px',
-	options: [ // 下拉的可选项
-		{
-			label: '未审核', // 选项显示文字
-			value: '0' // 选中对应的值
-		}
-	]
+  field: 'status', // 搜索的数据的字段，可在 params 初始化
+  placeholder: '请选择培训状态',
+  width: '160px',
+  options: [ // 下拉的可选项
+    {
+      label: '未审核', // 选项显示文字
+      value: '0' // 选中对应的值
+    }
+  ]
 }]
 ```
 
-#### options.headBtns 
+#### options.headBtns
 `ElmDataGrid`配置显示头部的按钮，要求是数组。
 
 ```javascript
 headBtns: [{
-	label: '添加',
-	type: 'info',
-	fn: this.add.bind(this)
+  label: '添加',
+  type: 'info',
+  fn: this.add.bind(this)
 }]
 ```
 

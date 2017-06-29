@@ -5,11 +5,11 @@
 
 ```javascript
 data: {
-	name: '张三',
-	userInfo: {
-		age: 24
-	},
-	desc: '这里是大段文字'
+  name: '张三',
+  userInfo: {
+    age: 24
+  },
+  desc: '这里是大段文字'
 }
 ```
 
@@ -18,11 +18,11 @@ data: {
 
 ```javascript
 fields: [
-	{
-		label: '年龄', // 显示的标签
-		field: 'userInfo.age', // 对应的字段
-		colspan: 12 // 设置该Item的宽度，非必传，默认继承并且会覆盖全局的 colspan
-	}
+  {
+    label: '年龄', // 显示的标签
+    field: 'userInfo.age', // 对应的字段
+    colspan: 12 // 设置该Item的宽度，非必传，默认继承并且会覆盖全局的 colspan
+  }
 ]
 ```
 

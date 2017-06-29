@@ -5,8 +5,8 @@
 
 ```javascript
 submitFn: (formData) => {
-	// ... 可在这里对最终提交参数做再次处理
-	// 进行接口请求，Ajax
+  // ... 可在这里对最终提交参数做再次处理
+  // 进行接口请求，Ajax
 }
 ```
 
@@ -15,8 +15,8 @@ submitFn: (formData) => {
 
 ```javascript
 initValues: {
-	name: '',
-	hobby: []
+  name: '',
+  hobby: []
 }
 ```
 
@@ -26,9 +26,9 @@ initValues: {
 ##### input、password
 ```javascript
 fields: [
-	{
-		type: 'input',
-		
-	}
+  {
+    type: 'input',
+
+  }
 ]
 ```
