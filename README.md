@@ -13,3 +13,10 @@
 - [API文档](https://github.com/Devil-Cong/td-elm/blob/master/docs/ElmProForm.md)
 
 ![ElmProForm](https://github.com/Devil-Cong/td-elm/blob/master/docs/ElmProForm.png)
+
+
+### ElmInfoView
+- 一个快速布局`Title`:`Value`形式的页面。
+- [API文档](https://github.com/Devil-Cong/td-elm/blob/master/docs/ElmInfoView.md)
+
+![ElmInfoView](https://github.com/Devil-Cong/td-elm/blob/master/docs/ElmInfoView.png)

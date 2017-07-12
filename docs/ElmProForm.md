@@ -136,4 +136,4 @@ fields: [
 
 ```javascript
 this.$refs['my-pro-form'].reset(); // 清空表单
-`
+```
