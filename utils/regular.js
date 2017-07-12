@@ -1,7 +1,6 @@
 /**
  * @file 统一定义正则表达式
  * @author Leon Liu
- * @email liujianyong@cd.baidu.com
  */
 
 // 邮箱正则

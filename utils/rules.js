@@ -1,7 +1,6 @@
 /**
  * @file 验证判断公共方法
  * @author Leon Liu
- * @email liujianyong@cd.baidu.com
  */
 import * as regular from './regular';
 

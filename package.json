@@ -1,6 +1,6 @@
 {
   "name": "td-elm",
-  "version": "1.3.0",
+  "version": "1.3.4",
   "description": "基于element-ui的简单二次封装",
   "main": "index.js",
   "author": "Leon",
@@ -10,5 +10,16 @@
   "peerDependencies": {
     "element-ui": "^1.3.4"
   },
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devil-Cong/td-elm.git"
+  },
+  "keywords": [
+    "mysql", "thinkphp", "crud"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devil-Cong/td-elm/issues"
+  },
+  "homepage": "https://github.com/Devil-Cong/td-elm#readme"
 }
